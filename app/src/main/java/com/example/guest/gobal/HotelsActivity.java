@@ -9,7 +9,6 @@ import android.widget.Button;
 import android.widget.EditText;
 
 public class HotelsActivity extends AppCompatActivity {
-    public static final String TAG = MainActivity.class.getSimpleName();
     private Button mFindCitiesButton;
     private EditText mLocationEditText;
 
@@ -24,8 +23,8 @@ public class HotelsActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String location = mLocationEditText.getText().toString();
-                Log.d(TAG, location);
                 Intent intent = new Intent(HotelsActivity.this, HotelsShowActivity.class);
+                intent.putExtra("location", location);
                 startActivity(intent);
             }
         });

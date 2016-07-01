@@ -24,7 +24,8 @@
             android:name=".AutosActivity"
             android:label="@string/title_activity_autos"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".HotelsShowActivity"></activity>
+        <activity android:name=".HotelsShowActivity" />
+        <activity android:name=".FlightsShowActivity"></activity>
     </application>
 
 </manifest>

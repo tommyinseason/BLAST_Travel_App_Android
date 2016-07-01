@@ -8,17 +8,21 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import butterknife.Bind;
+import butterknife.ButterKnife;
+
 public class HotelsActivity extends AppCompatActivity {
-    private Button mFindCitiesButton;
-    private EditText mLocationEditText;
+    @Bind(R.id.buttonSearch) Button mButtonSearch;
+    @Bind(R.id.locationEditText) EditText mLocationEditText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hotels);
+        ButterKnife.bind(this);
         mLocationEditText = (EditText) findViewById(R.id.locationEditText);
-        mFindCitiesButton = (Button) findViewById(R.id.buttonSearch);
-        mFindCitiesButton.setOnClickListener(new View.OnClickListener() {
+        mButtonSearch = (Button) findViewById(R.id.buttonSearch);
+        mButtonSearch.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {

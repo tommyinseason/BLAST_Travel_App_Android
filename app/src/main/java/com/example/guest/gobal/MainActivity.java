@@ -9,16 +9,20 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import butterknife.Bind;
+import butterknife.ButterKnife;
+
 public class MainActivity extends AppCompatActivity {
-    private TextView mAppNameTextView;
-    private Button mButton1;
-    private Button mButton2;
-    private Button mButton3;
+    @Bind(R.id.appNameTextView) TextView mAppNameTextView;
+    @Bind(R.id.button1) Button mButton1;
+    @Bind(R.id.button2) Button mButton2;
+    @Bind(R.id.button3) Button mButton3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        ButterKnife.bind(this);
 
         mButton1 = (Button) findViewById(R.id.button1);
             mButton1.setOnClickListener(new View.OnClickListener() {

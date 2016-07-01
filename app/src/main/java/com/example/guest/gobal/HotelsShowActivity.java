@@ -7,15 +7,20 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import butterknife.Bind;
+import butterknife.ButterKnife;
+
 public class HotelsShowActivity extends AppCompatActivity {
-    private TextView mLocationTextView;
-    private ListView mListView;
+    @Bind(R.id.locationTextView) TextView mLocationTextView;
+    @Bind(R.id.listView) ListView mListView;
+
     private String[] hotels = new String[] {"Hilton", "Bellagio", "Wynn", "Caesars"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hotels_show);
+        ButterKnife.bind(this);
 
         mListView = (ListView) findViewById(R.id.listView);
         mLocationTextView = (TextView) findViewById(R.id.locationTextView);

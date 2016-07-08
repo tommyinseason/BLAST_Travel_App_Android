@@ -1,9 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.guest.gobal.MainActivity">
+    tools:context="com.example.guest.gobal.MainActivity"
+
+
+        android:orientation="vertical"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_gravity="center"
+    android:weightSum="1">
 
     <TextView
         android:layout_width="wrap_content"
@@ -19,53 +27,36 @@
 
     <Button
         android:layout_width="wrap_content"
-        android:layout_height="200dp"
+        android:layout_height="133dp"
         android:text="HOTELS"
         android:id="@+id/button1"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:clickable="false"
-        android:focusable="false"
-        android:focusableInTouchMode="false"
+        android:layout_gravity="center_horizontal"
         android:background="@drawable/fiji"
         android:textColor="@color/colorTextIcons"
         android:textSize="60sp"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="true"
+        android:layout_weight="0.31" />
 
     <Button
         android:layout_width="wrap_content"
+        android:layout_height="149dp"
         android:text="FLIGHTS"
         android:id="@+id/button2"
-        android:layout_height="210dp"
-        android:layout_below="@+id/button1"
-        android:layout_alignLeft="@+id/button1"
-        android:layout_alignStart="@+id/button1"
-        android:clickable="false"
-        android:focusable="false"
-        android:focusableInTouchMode="false"
+        android:layout_gravity="center_horizontal"
         android:background="@drawable/flights"
         android:textColor="@color/colorTextIcons"
         android:textSize="60sp"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"/>
+        android:layout_weight="0.20" />
 
     <Button
         android:layout_width="wrap_content"
+        android:layout_height="123dp"
         android:text="AUTOS"
         android:id="@+id/button3"
-        android:layout_height="200dp"
-        android:clickable="false"
-        android:focusable="false"
-        android:focusableInTouchMode="false"
         android:background="@drawable/autos"
         android:textColor="@color/colorTextIcons"
         android:textSize="60sp"
-        android:layout_below="@+id/button2"
-        android:layout_alignLeft="@+id/button2"
-        android:layout_alignStart="@+id/button2" />
+        android:layout_weight="0.19" />
 
-
-</RelativeLayout>
-
+</LinearLayout>

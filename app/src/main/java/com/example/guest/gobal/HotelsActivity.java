@@ -21,6 +21,7 @@ public class HotelsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hotels);
         ButterKnife.bind(this);
+
         mLocationEditText = (EditText) findViewById(R.id.locationEditText);
         mButtonSearch = (Button) findViewById(R.id.buttonSearch);
         mButtonSearch.setOnClickListener(new View.OnClickListener() {

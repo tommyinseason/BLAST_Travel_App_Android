@@ -13,7 +13,7 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 
 public class MainActivity extends AppCompatActivity {
-    @Bind(R.id.appNameTextView) TextView mAppNameTextView;
+
     @Bind(R.id.button1) Button mButton1;
     @Bind(R.id.button2) Button mButton2;
     @Bind(R.id.button3) Button mButton3;
@@ -57,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
 
         });
 
-        mAppNameTextView = (TextView) findViewById(R.id.appNameTextView);
+
         Typeface caviarDreamsFont = Typeface.createFromAsset(getAssets(), "fonts/CaviarDreams.ttf");
         mButton1.setTypeface(caviarDreamsFont);
         mButton2.setTypeface(caviarDreamsFont);

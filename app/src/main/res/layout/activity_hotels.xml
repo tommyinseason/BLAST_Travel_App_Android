@@ -7,8 +7,6 @@
 
 
 
-
-
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
@@ -25,19 +23,16 @@
         android:textColor="#ffffff"
         android:layout_marginTop="72dp"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:textAlignment="center" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Search by City"
         android:id="@+id/buttonSearch"
+        android:background="@android:drawable/ic_menu_search"
+        android:textSize="30sp"
         android:layout_below="@+id/locationEditText"
-        android:layout_alignLeft="@+id/locationEditText"
-        android:layout_alignStart="@+id/locationEditText"
-        android:layout_alignRight="@+id/locationEditText"
-        android:layout_alignEnd="@+id/locationEditText"
-        android:background="@color/button_material_dark"
-        android:textSize="30sp" />
+        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>

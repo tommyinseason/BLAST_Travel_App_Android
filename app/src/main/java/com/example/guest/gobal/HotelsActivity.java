@@ -21,7 +21,6 @@ public class HotelsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hotels);
         ButterKnife.bind(this);
-
         mLocationEditText = (EditText) findViewById(R.id.locationEditText);
         mButtonSearch = (Button) findViewById(R.id.buttonSearch);
         mButtonSearch.setOnClickListener(new View.OnClickListener() {
@@ -34,9 +33,8 @@ public class HotelsActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        Typeface caviarDreamsFont = Typeface.createFromAsset(getAssets(), "fonts/CaviarDreams.ttf");
-        mLocationEditText.setTypeface(caviarDreamsFont);
-        mButtonSearch.setTypeface(caviarDreamsFont);
     }
+
+
 
 }

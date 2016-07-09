@@ -3,12 +3,15 @@ package com.example.guest.gobal.ui;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 
 import com.example.guest.gobal.R;
+import com.example.guest.gobal.adapters.HotelListAdapter;
 import com.example.guest.gobal.models.Hotel;
 import com.example.guest.gobal.services.YelpService;
 
@@ -24,8 +27,10 @@ import okhttp3.Response;
 public class HotelsShowActivity extends AppCompatActivity {
     public static final String TAG = HotelsShowActivity.class.getSimpleName();
 
-    @Bind(R.id.locationTextView) TextView mLocationTextView;
-    @Bind(R.id.listView) ListView mListView;
+    @Bind(R.id.recyclerView)
+    RecyclerView mRecyclerView;
+    private HotelListAdapter mAdapter;
+
 
     public ArrayList<Hotel> mHotels = new ArrayList<>();
 
@@ -39,7 +44,7 @@ public class HotelsShowActivity extends AppCompatActivity {
         Intent intent = getIntent();
         String location = intent.getStringExtra("location");
 
-        mLocationTextView.setText("Here are all the HOTELS near: " + location);
+
 
         getHotels(location);
     }
@@ -62,23 +67,13 @@ public class HotelsShowActivity extends AppCompatActivity {
 
                         @Override
                         public void run() {
-                            String[] hotelNames = new String[mHotels.size()];
-                            for (int i = 0; i < hotelNames.length; i++) {
-                                hotelNames[i] = mHotels.get(i).getName();
+                            mAdapter = new HotelListAdapter(getApplicationContext(), mHotels);
+                            mRecyclerView.setAdapter(mAdapter);
+                            RecyclerView.LayoutManager layoutManager =
+                                    new LinearLayoutManager(HotelsShowActivity.this);
+                            mRecyclerView.setLayoutManager(layoutManager);
+                            mRecyclerView.setHasFixedSize(true);
                             }
-                            ArrayAdapter adapter = new ArrayAdapter(HotelsShowActivity.this, android.R.layout.simple_list_item_1, hotelNames);
-                            mListView.setAdapter(adapter);
-
-                            for (Hotel hotel : mHotels) {
-                                Log.d(TAG, "Name: " + hotel.getName());
-                                Log.d(TAG, "Phone: " + hotel.getPhone());
-                                Log.d(TAG, "Website: " + hotel.getWebsite());
-                                Log.d(TAG, "Image url: " + hotel.getImageUrl());
-                                Log.d(TAG, "Rating: " + Double.toString(hotel.getRating()));
-                                Log.d(TAG, "Address: " + android.text.TextUtils.join(", ", hotel.getAddress()));
-                                Log.d(TAG, "Categories: " + hotel.getCategories().toString());
-                            }
-                        }
                     });
                 }
         });

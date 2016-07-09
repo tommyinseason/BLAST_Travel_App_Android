@@ -12,6 +12,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -25,29 +26,15 @@ public class HotelsShowActivity extends AppCompatActivity {
     @Bind(R.id.locationTextView) TextView mLocationTextView;
     @Bind(R.id.listView) ListView mListView;
 
-    private String[] hotels = new String[] {"Hilton", "Bellagio", "Wynn", "Caesars"};
+    public ArrayList<Hotel> mHotels = new ArrayList<>();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hotels_show);
         ButterKnife.bind(this);
-
-        mListView = (ListView) findViewById(R.id.listView);
-        mLocationTextView = (TextView) findViewById(R.id.locationTextView);
-
-        ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, hotels);
-        mListView.setAdapter(adapter);
-
-        mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                String hotel = ((TextView)view).getText().toString();
-                Toast.makeText(HotelsShowActivity.this, hotel, Toast.LENGTH_LONG).show();
-            }
-        });
-
-
+        
         Intent intent = getIntent();
         String location = intent.getStringExtra("location");
 
@@ -58,6 +45,7 @@ public class HotelsShowActivity extends AppCompatActivity {
 
     private void getHotels(String location) {
         final YelpService yelpService = new YelpService();
+
         yelpService.findHotels(location, new Callback() {
 
             @Override
@@ -66,14 +54,32 @@ public class HotelsShowActivity extends AppCompatActivity {
             }
 
             @Override
-            public void onResponse(Call call, Response response) throws IOException {
-                try {
-                    String jsonData = response.body().string();
-                    Log.v(TAG, jsonData);
-                } catch (IOException e) {
-                    e.printStackTrace();
+            public void onResponse(Call call, Response response) {
+                mHotels = yelpService.processResults(response);
+
+                    HotelsShowActivity.this.runOnUiThread(new Runnable() {
+
+                        @Override
+                        public void run() {
+                            String[] hotelNames = new String[mHotels.size()];
+                            for (int i = 0; i < hotelNames.length; i++) {
+                                hotelNames[i] = mHotels.get(i).getName();
+                            }
+                            ArrayAdapter adapter = new ArrayAdapter(HotelsShowActivity.this, android.R.layout.simple_list_item_1, hotelNames);
+                            mListView.setAdapter(adapter);
+
+                            for (Hotel hotel : mHotels) {
+                                Log.d(TAG, "Name: " + hotel.getName());
+                                Log.d(TAG, "Phone: " + hotel.getPhone());
+                                Log.d(TAG, "Website: " + hotel.getWebsite());
+                                Log.d(TAG, "Image url: " + hotel.getImageUrl());
+                                Log.d(TAG, "Rating: " + Double.toString(hotel.getRating()));
+                                Log.d(TAG, "Address: " + android.text.TextUtils.join(", ", hotel.getAddress()));
+                                Log.d(TAG, "Categories: " + hotel.getCategories().toString());
+                            }
+                        }
+                    });
                 }
-            }
         });
     }
 }

@@ -1,4 +1,7 @@
-package com.example.guest.gobal;
+package com.example.guest.gobal.services;
+
+import com.example.guest.gobal.ui.Constants;
+import com.example.guest.gobal.models.Hotel;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -8,7 +11,6 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 import okhttp3.Call;
-import okhttp3.Callback;
 import okhttp3.HttpUrl;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;

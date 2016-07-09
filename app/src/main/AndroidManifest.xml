@@ -10,7 +10,7 @@
         android:label="FLIHOTOS"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity"
+        <activity android:name=".ui.MainActivity"
                   android:theme="@style/NoActionBarTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -18,17 +18,17 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".HotelsActivity" />
+        <activity android:name=".ui.HotelsActivity" />
         <activity
-            android:name=".FlightsActivity"
+            android:name=".ui.FlightsActivity"
             android:label="@string/title_activity_flights"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".AutosActivity"
+            android:name=".ui.AutosActivity"
             android:label="@string/title_activity_autos"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".HotelsShowActivity" />
-        <activity android:name=".FlightsShowActivity"></activity>
+        <activity android:name=".ui.HotelsShowActivity" />
+        <activity android:name=".ui.FlightsShowActivity"></activity>
     </application>
 
 </manifest>

@@ -1,4 +1,6 @@
-package com.example.guest.gobal;
+package com.example.guest.gobal.ui;
+
+import com.example.guest.gobal.BuildConfig;
 
 /**
  * Created by Guest on 7/8/16.

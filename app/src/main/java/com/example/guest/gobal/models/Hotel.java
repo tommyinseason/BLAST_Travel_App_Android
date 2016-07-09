@@ -1,4 +1,4 @@
-package com.example.guest.gobal;
+package com.example.guest.gobal.models;
 
 import java.util.ArrayList;
 

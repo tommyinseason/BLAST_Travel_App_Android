@@ -1,7 +1,9 @@
-package com.example.guest.gobal;
+package com.example.guest.gobal.ui;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import com.example.guest.gobal.R;
 
 public class FlightsShowActivity extends AppCompatActivity {
 

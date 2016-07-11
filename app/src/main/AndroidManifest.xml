@@ -28,7 +28,7 @@
             android:name=".ui.AutosActivity"
             android:label="@string/title_activity_autos"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".ui.HotelsShowActivity" />
+        <activity android:name=".ui.HotelsListActivity" />
         <activity android:name=".ui.FlightsShowActivity" />
         <activity
             android:name=".ui.HotelDetailActivity"

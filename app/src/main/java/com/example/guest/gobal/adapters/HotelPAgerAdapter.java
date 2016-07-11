@@ -16,7 +16,7 @@ import java.util.ArrayList;
 public class HotelPagerAdapter extends FragmentPagerAdapter{
     private ArrayList<Hotel> mHotel;
 
-    public HotelPagerAdapter(FragmentManager fm, ArrayList<Hotel> restaurants) {
+    public HotelPagerAdapter(FragmentManager fm, ArrayList<Hotel> hotels) {
         super(fm);
         mHotel = hotels;
     }

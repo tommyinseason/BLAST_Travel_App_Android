@@ -22,19 +22,18 @@ import butterknife.ButterKnife;
  * A simple {@link Fragment} subclass.
  */
 public class HotelDetailFragment extends Fragment implements View.OnClickListener {
-    @Bind(R.id.restaurantImageView) ImageView mImageLabel;
-    @Bind(R.id.restaurantNameTextView) TextView mNameLabel;
-    @Bind(R.id.cuisineTextView) TextView mCategoriesLabel;
+    @Bind(R.id.hotelImageView) ImageView mImageLabel;
+    @Bind(R.id.hotelNameTextView) TextView mNameLabel;
     @Bind(R.id.ratingTextView) TextView mRatingLabel;
     @Bind(R.id.websiteTextView) TextView mWebsiteLabel;
     @Bind(R.id.phoneTextView) TextView mPhoneLabel;
     @Bind(R.id.addressTextView) TextView mAddressLabel;
-    @Bind(R.id.saveRestaurantButton) TextView mSaveRestaurantButton;
+    @Bind(R.id.saveHotelButton) TextView mSaveRestaurantButton;
 
     private Hotel mHotel;
 
-    public static HotelDetailFragment newInstance(Hotel restaurant) {
-        HotelDetailFragment restaurantDetailFragment = new HotelDetailFragment();
+    public static HotelDetailFragment newInstance(Hotel hotel) {
+        HotelDetailFragment hotelDetailFragment = new HotelDetailFragment();
         Bundle args = new Bundle();
         args.putParcelable("hotel", Parcels.wrap(hotel));
         hotelDetailFragment.setArguments(args);
@@ -56,12 +55,11 @@ public class HotelDetailFragment extends Fragment implements View.OnClickListene
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_restaurant_detail, container, false);
+        View view = inflater.inflate(R.layout.fragment_hotel_detail, container, false);
         ButterKnife.bind(this, view);
-        Picasso.with(view.getContext()).load(mHotel.getImageUrl()).into(mImageLabel);
+        //icasso.with(view.getContext()).load(mHotel.getImageUrl()).into(mImageLabel);
 
         mNameLabel.setText(mHotel.getName());
-        mCategoriesLabel.setText(android.text.TextUtils.join(", ", mHotel.getCategories()));
         mRatingLabel.setText(Double.toString(mHotel.getRating()) + "/5");
         mPhoneLabel.setText(mHotel.getPhone());
         mAddressLabel.setText(android.text.TextUtils.join(", ", mHotel.getAddress()));

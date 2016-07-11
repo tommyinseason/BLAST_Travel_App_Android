@@ -1,10 +1,13 @@
 package com.example.guest.gobal.models;
 
+import org.parceler.Parcel;
+
 import java.util.ArrayList;
 
 /**
  * Created by Guest on 7/8/16.
  */
+@Parcel
 public class Hotel {
     private String mName;
     private String mPhone;
@@ -15,6 +18,8 @@ public class Hotel {
     private double mLatitude;
     private double mLongitude;
     private ArrayList<String> mCategories = new ArrayList<>();
+
+    public Hotel() {}
 
     public Hotel(String name, String phone, String website,
                       double rating, String imageUrl, ArrayList<String> address,

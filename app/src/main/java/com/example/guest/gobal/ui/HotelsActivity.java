@@ -28,13 +28,10 @@ public class HotelsActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String location = mLocationEditText.getText().toString();
-                Intent intent = new Intent(HotelsActivity.this, HotelsShowActivity.class);
+                Intent intent = new Intent(HotelsActivity.this, HotelsListActivity.class);
                 intent.putExtra("location", location);
                 startActivity(intent);
             }
         });
     }
-
-
-
 }

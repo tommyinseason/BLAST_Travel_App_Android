@@ -24,10 +24,10 @@ import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.Response;
 
-public class HotelsShowActivity extends AppCompatActivity {
+public class HotelsListActivity extends AppCompatActivity {
     @Bind(R.id.recyclerView) RecyclerView mRecyclerView;
     private HotelListAdapter mAdapter;
-    public static final String TAG = HotelsShowActivity.class.getSimpleName();
+    public static final String TAG = HotelsListActivity.class.getSimpleName();
     public ArrayList<Hotel> mHotels = new ArrayList<>();
 
 
@@ -59,14 +59,14 @@ public class HotelsShowActivity extends AppCompatActivity {
             public void onResponse(Call call, Response response) {
                 mHotels = yelpService.processResults(response);
 
-                    HotelsShowActivity.this.runOnUiThread(new Runnable() {
+                    HotelsListActivity.this.runOnUiThread(new Runnable() {
 
                         @Override
                         public void run() {
                             mAdapter = new HotelListAdapter(getApplicationContext(), mHotels);
                             mRecyclerView.setAdapter(mAdapter);
                             RecyclerView.LayoutManager layoutManager =
-                                    new LinearLayoutManager(HotelsShowActivity.this);
+                                    new LinearLayoutManager(HotelsListActivity.this);
                             mRecyclerView.setLayoutManager(layoutManager);
                             mRecyclerView.setHasFixedSize(true);
                             }

@@ -1,0 +1,41 @@
+package com.example.guest.gobal.ui;
+
+import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.Snackbar;
+import android.support.v4.view.ViewPager;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
+import android.view.View;
+
+import com.example.guest.gobal.R;
+import com.example.guest.gobal.models.Hotel;
+
+import java.util.ArrayList;
+
+import butterknife.Bind;
+import butterknife.ButterKnife;
+
+public class HotelDetailActivity extends AppCompatActivity {
+    @Bind(R.id.viewPager) ViewPager mViewPager;
+    private HotelPagerAdapter adapterViewPager;
+    ArrayList<Hotel> mHotels = new ArrayList<>();
+
+
+
+
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_hotel_detail);
+        ButterKnife.bind(this);
+
+        mHotels = Parcels.unwrap(getIntent().getParcelableExtra("hotels"));
+        int startingPosition = Integer.parseInt(getIntent().getStringExtra("position"));
+
+        adapterViewPager = new HotelPagerAdapter(getSupportFragmentManager(), mHotels);
+        mViewPager.setAdapter(adapterViewPager);
+        mViewPager.setCurrentItem(startingPosition);
+    }
+}

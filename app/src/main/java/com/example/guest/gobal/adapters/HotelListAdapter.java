@@ -1,6 +1,7 @@
 package com.example.guest.gobal.adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,6 +11,7 @@ import android.widget.TextView;
 
 import com.example.guest.gobal.R;
 import com.example.guest.gobal.models.Hotel;
+import com.example.guest.gobal.ui.HotelDetailActivity;
 
 import java.util.ArrayList;
 
@@ -67,12 +69,21 @@ public class HotelListAdapter extends RecyclerView.Adapter<HotelListAdapter.Hote
         }
     }
 
-    public class HotelViewHolder extends RecyclerView.ViewHolder {
-        public HotelViewHolder(View view) {
-            super(view);
+    public class HotelViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+
+
+        public HotelViewHolder(View itemView) {
+
+            itemView.setOnClickListener(this);
         }
 
-        public void bindHotel(Hotel hotel) {
+        @Override
+        public void onClick(View v) {
+            int itemPosition = getLayoutPosition();
+            Intent intent = new Intent(mContext, HotelDetailActivity.class);
+            intent.putExtra("position", itemPosition + "");
+            intent.putExtra("hotel", Parcels.wrap(mHotel));
+            mContext.startActivity(intent);
         }
     }
 }

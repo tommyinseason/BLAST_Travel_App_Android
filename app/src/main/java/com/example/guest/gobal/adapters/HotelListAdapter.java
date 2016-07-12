@@ -13,6 +13,7 @@ import android.widget.TextView;
 import com.example.guest.gobal.R;
 import com.example.guest.gobal.models.Hotel;
 import com.example.guest.gobal.ui.HotelDetailActivity;
+import com.squareup.picasso.Picasso;
 
 import org.parceler.Parcels;
 
@@ -54,8 +55,8 @@ public class HotelListAdapter extends RecyclerView.Adapter<HotelListAdapter.Hote
     public class HotelViewHolder extends RecyclerView.ViewHolder  implements View.OnClickListener {
         @Bind(R.id.hotelImageView) ImageView mHotelImageView;
         @Bind(R.id.hotelNameTextView) TextView mNameTextView;
-        @Bind(R.id.categoryTextView) TextView mCategoryTextView;
         @Bind(R.id.ratingTextView) TextView mRatingTextView;
+//        @Bind(R.id.addressTextView) TextView mAddressTextView;
         private Context mContext;
 
 
@@ -67,9 +68,10 @@ public class HotelListAdapter extends RecyclerView.Adapter<HotelListAdapter.Hote
         }
 
         public void bindHotel(Hotel hotel) {
+            Picasso.with(mContext).load(hotel.getImageUrl()).into(mHotelImageView);
             mNameTextView.setText(hotel.getName());
-            mCategoryTextView.setText(hotel.getCategories().get(0));
             mRatingTextView.setText("Rating: " + hotel.getRating() + "/5");
+
         }
 
         @Override

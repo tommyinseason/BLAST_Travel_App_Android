@@ -9,6 +9,13 @@
         android:id="@+id/hotelImageView"
         android:src="@drawable/skyline"
         android:scaleType="centerCrop"/>
+    <!--<TextView-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:id="@+id/addressTextView"-->
+        <!--android:textSize="20dp"-->
+        <!--android:textStyle="bold"-->
+        <!--android:textColor="@color/colorPrimary" />-->
 
     <LinearLayout
         android:orientation="vertical"
@@ -26,15 +33,6 @@
             android:text="Hotel Name"
             android:textColor="@color/colorPrimary"/>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="One Cuisine Type"
-            android:id="@+id/categoryTextView"
-            android:layout_below="@+id/hotelNameTextView"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:textStyle="italic"/>
 
         <RelativeLayout
             android:layout_width="match_parent"

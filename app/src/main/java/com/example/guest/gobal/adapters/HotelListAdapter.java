@@ -2,6 +2,7 @@ package com.example.guest.gobal.adapters;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -71,6 +72,7 @@ public class HotelListAdapter extends RecyclerView.Adapter<HotelListAdapter.Hote
             Picasso.with(mContext).load(hotel.getImageUrl()).into(mHotelImageView);
             mNameTextView.setText(hotel.getName());
             mRatingTextView.setText("Rating: " + hotel.getRating() + "/5");
+
 
         }
 

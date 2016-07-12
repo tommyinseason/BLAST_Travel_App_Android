@@ -16,7 +16,6 @@
             android:layout_width="match_parent"
             android:layout_height="180dp"
             android:id="@+id/hotelImageView"
-            android:src="@drawable/fiji"
             android:scaleType="centerCrop" />
 
         <RelativeLayout

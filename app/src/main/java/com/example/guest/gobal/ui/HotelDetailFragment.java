@@ -12,6 +12,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import com.example.guest.gobal.R;
 import com.example.guest.gobal.models.Hotel;
+import com.squareup.picasso.Picasso;
 
 import org.parceler.Parcels;
 
@@ -22,13 +23,16 @@ import butterknife.ButterKnife;
  * A simple {@link Fragment} subclass.
  */
 public class HotelDetailFragment extends Fragment implements View.OnClickListener {
+    private static final int MAX_WIDTH = 400;
+    private static final int MAX_HEIGHT = 300;
+
     @Bind(R.id.hotelImageView) ImageView mImageLabel;
     @Bind(R.id.hotelNameTextView) TextView mNameLabel;
     @Bind(R.id.ratingTextView) TextView mRatingLabel;
     @Bind(R.id.websiteTextView) TextView mWebsiteLabel;
     @Bind(R.id.phoneTextView) TextView mPhoneLabel;
     @Bind(R.id.addressTextView) TextView mAddressLabel;
-    @Bind(R.id.saveHotelButton) TextView mSaveRestaurantButton;
+    @Bind(R.id.saveHotelButton) TextView mSaveHotelButton;
 
     private Hotel mHotel;
 
@@ -57,7 +61,14 @@ public class HotelDetailFragment extends Fragment implements View.OnClickListene
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_hotel_detail, container, false);
         ButterKnife.bind(this, view);
-        //icasso.with(view.getContext()).load(mHotel.getImageUrl()).into(mImageLabel);
+
+        Picasso.with(view.getContext())
+                .load(mHotel.getImageUrl())
+                .resize(MAX_WIDTH, MAX_HEIGHT)
+                .centerCrop()
+                .into(mImageLabel);
+
+
 
         mNameLabel.setText(mHotel.getName());
         mRatingLabel.setText(Double.toString(mHotel.getRating()) + "/5");

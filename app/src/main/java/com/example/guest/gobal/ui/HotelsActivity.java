@@ -1,6 +1,7 @@
 package com.example.guest.gobal.ui;
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -33,5 +34,9 @@ public class HotelsActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        Typeface caviarDreamsFont = Typeface.createFromAsset(getAssets(), "fonts/CaviarDreams.ttf");
+        mLocationEditText.setTypeface(caviarDreamsFont);
+        mButtonSearch.setTypeface(caviarDreamsFont);
     }
 }

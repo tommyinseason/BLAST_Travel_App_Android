@@ -4,23 +4,17 @@
     android:layout_height="wrap_content">
 
     <ImageView
-        android:layout_width="130dp"
-        android:layout_height="100dp"
+        android:layout_width="match_parent"
+        android:layout_height="220dp"
         android:id="@+id/hotelImageView"
         android:src="@drawable/skyline"
         android:scaleType="centerCrop"/>
-    <!--<TextView-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:id="@+id/addressTextView"-->
-        <!--android:textSize="20dp"-->
-        <!--android:textStyle="bold"-->
-        <!--android:textColor="@color/colorPrimary" />-->
+
 
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:background="#ffffff"
+        android:background="#000000"
         android:layout_height="match_parent"
         android:padding="10dp">
 
@@ -28,10 +22,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/hotelNameTextView"
-            android:textSize="20dp"
+            android:textSize="25dp"
             android:textStyle="bold"
             android:text="Hotel Name"
-            android:textColor="@color/colorPrimary"/>
+            android:textColor="#FFFFFF"/>
 
 
         <RelativeLayout

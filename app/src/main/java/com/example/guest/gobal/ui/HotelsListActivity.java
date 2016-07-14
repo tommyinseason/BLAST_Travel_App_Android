@@ -26,7 +26,9 @@ import okhttp3.Callback;
 import okhttp3.Response;
 
 public class HotelsListActivity extends AppCompatActivity {
+
     @Bind(R.id.recyclerView) RecyclerView mRecyclerView;
+
     private HotelListAdapter mAdapter;
     public static final String TAG = HotelsListActivity.class.getSimpleName();
     public ArrayList<Hotel> mHotels = new ArrayList<>();

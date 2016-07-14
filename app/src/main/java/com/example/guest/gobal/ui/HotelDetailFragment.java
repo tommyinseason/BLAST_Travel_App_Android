@@ -11,8 +11,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import com.example.guest.gobal.R;
 import com.example.guest.gobal.models.Hotel;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.squareup.picasso.Picasso;
 
 import org.parceler.Parcels;
@@ -83,9 +87,12 @@ public class HotelDetailFragment extends Fragment implements View.OnClickListene
         mRatingLabel.setText(Double.toString(mHotel.getRating()) + "/5");
         mPhoneLabel.setText(mHotel.getPhone());
         mAddressLabel.setText(android.text.TextUtils.join(", ", mHotel.getAddress()));
+
         mWebsiteLabel.setOnClickListener(this);
         mPhoneLabel.setOnClickListener(this);
         mAddressLabel.setOnClickListener(this);
+
+        mSaveHotelButton.setOnClickListener(this);
 
         return view;
     }
@@ -108,6 +115,13 @@ public class HotelDetailFragment extends Fragment implements View.OnClickListene
                             + "," + mHotel.getLongitude()
                             + "?q=(" + mHotel.getName() + ")"));
             startActivity(mapIntent);
+        }
+        if (v == mSaveHotelButton) {
+            DatabaseReference hotelRef = FirebaseDatabase
+                    .getInstance()
+                    .getReference(Constants.FIREBASE_CHILD_HOTELS);
+            hotelRef.push().setValue(mHotel);
+            Toast.makeText(getContext(), "Saved", Toast.LENGTH_SHORT).show();
         }
     }
 }

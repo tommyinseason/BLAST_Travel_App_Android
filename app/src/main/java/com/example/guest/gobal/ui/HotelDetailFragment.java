@@ -2,6 +2,7 @@ package com.example.guest.gobal.ui;
 
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -54,6 +55,14 @@ public class HotelDetailFragment extends Fragment implements View.OnClickListene
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mHotel = Parcels.unwrap(getArguments().getParcelable("hotel"));
+
+//        Typeface caviarDreamsFont = Typeface.createFromAsset(getAssets(), "fonts/CaviarDreams.ttf");
+//        mNameLabel.setTypeface(caviarDreamsFont);
+//        mRatingLabel.setTypeface(caviarDreamsFont);
+//        mWebsiteLabel.setTypeface(caviarDreamsFont);
+//        mPhoneLabel.setTypeface(caviarDreamsFont);
+//        mAddressLabel.setTypeface(caviarDreamsFont);
+//        mSaveHotelButton.setTypeface(caviarDreamsFont);
     }
 
     @Override

@@ -1,6 +1,7 @@
 package com.example.guest.gobal.ui;
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -40,9 +41,8 @@ public class HotelsListActivity extends AppCompatActivity {
         Intent intent = getIntent();
         String location = intent.getStringExtra("location");
 
-
-
         getHotels(location);
+
     }
 
     private void getHotels(String location) {

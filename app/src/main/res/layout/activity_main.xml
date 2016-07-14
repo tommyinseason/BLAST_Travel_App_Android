@@ -27,7 +27,7 @@
             android:id="@+id/button1"
             android:background="@drawable/fiji"
             android:textColor="@color/colorTextIcons"
-            android:textSize="60sp" />
+            android:textSize="77sp" />
     </RelativeLayout>
 
     <RelativeLayout
@@ -42,7 +42,7 @@
             android:id="@+id/button2"
             android:background="@drawable/flights"
             android:textColor="@color/colorTextIcons"
-            android:textSize="60sp" />
+            android:textSize="77sp" />
     </RelativeLayout>
 
     <RelativeLayout
@@ -57,6 +57,6 @@
             android:id="@+id/button3"
             android:background="@drawable/autos"
             android:textColor="@color/colorTextIcons"
-            android:textSize="60sp"/>
+            android:textSize="77sp"/>
     </RelativeLayout>
 </LinearLayout>

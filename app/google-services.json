@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "591347559884",
+    "firebase_url": "https://blast-23baf.firebaseio.com",
+    "project_id": "blast-23baf",
+    "storage_bucket": "blast-23baf.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:591347559884:android:d1e4f5845568fb39",
+        "android_client_info": {
+          "package_name": "com.example.guest.gobal"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "591347559884-b5prg559m5d2lvse6o8o5dlpttkva23o.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.guest.gobal",
+            "certificate_hash": "1CE871F150961DA178C4E154AD7BDF14292AAFF5"
+          }
+        },
+        {
+          "client_id": "591347559884-89cm1ftk5kg878ebtnnqes8jk39klhd5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDEjdGE1_QjA_s-xfIw3DDEgEMOvWRuMDI"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "591347559884-89cm1ftk5kg878ebtnnqes8jk39klhd5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

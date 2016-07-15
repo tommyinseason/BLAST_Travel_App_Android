@@ -26,7 +26,7 @@ public class HotelsActivity extends AppCompatActivity implements View.OnClickLis
 
     @Bind(R.id.buttonSearch) Button mButtonSearch;
     @Bind(R.id.locationEditText) EditText mLocationEditText;
-    @Bind(R.id.savedHotelsButton) EditText mSavedHotelsButton;
+//    @Bind(R.id.savedHotelsButton) EditText mSavedHotelsButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,10 +59,10 @@ public class HotelsActivity extends AppCompatActivity implements View.OnClickLis
         Typeface caviarDreamsFont = Typeface.createFromAsset(getAssets(), "fonts/CaviarDreams.ttf");
         mLocationEditText.setTypeface(caviarDreamsFont);
         mButtonSearch.setTypeface(caviarDreamsFont);
-        mSavedHotelsButton.setTypeface(caviarDreamsFont);
+//        mSavedHotelsButton.setTypeface(caviarDreamsFont);
         mButtonSearch.setOnClickListener(this);
 
-        mSavedHotelsButton.setOnClickListener(this);
+//        mSavedHotelsButton.setOnClickListener(this);
     }
 
     @Override
@@ -77,10 +77,10 @@ public class HotelsActivity extends AppCompatActivity implements View.OnClickLis
             startActivity(intent);
         }
 
-        if (v == mSavedHotelsButton) {
-            Intent intent = new Intent(HotelsActivity.this, SavedHotelListActivity.class);
-            startActivity(intent);
-        }
+//        if (v == mSavedHotelsButton) {
+//            Intent intent = new Intent(HotelsActivity.this, SavedHotelListActivity.class);
+//            startActivity(intent);
+//        }
     }
 
     public void saveLocationToFirebase(String location) {

@@ -1,11 +1,14 @@
 package com.example.guest.gobal.ui;
 
 
+import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -31,6 +34,8 @@ public class HotelDetailFragment extends Fragment implements View.OnClickListene
     private static final int MAX_WIDTH = 400;
     private static final int MAX_HEIGHT = 300;
 
+    private Context context;
+
     @Bind(R.id.hotelImageView) ImageView mImageLabel;
     @Bind(R.id.hotelNameTextView) TextView mNameLabel;
     @Bind(R.id.ratingTextView) TextView mRatingLabel;
@@ -42,6 +47,7 @@ public class HotelDetailFragment extends Fragment implements View.OnClickListene
     private Hotel mHotel;
 
     public static HotelDetailFragment newInstance(Hotel hotel) {
+
         HotelDetailFragment hotelDetailFragment = new HotelDetailFragment();
         Bundle args = new Bundle();
         args.putParcelable("hotel", Parcels.wrap(hotel));
@@ -60,13 +66,6 @@ public class HotelDetailFragment extends Fragment implements View.OnClickListene
         super.onCreate(savedInstanceState);
         mHotel = Parcels.unwrap(getArguments().getParcelable("hotel"));
 
-//        Typeface caviarDreamsFont = Typeface.createFromAsset(getAssets(), "fonts/CaviarDreams.ttf");
-//        mNameLabel.setTypeface(caviarDreamsFont);
-//        mRatingLabel.setTypeface(caviarDreamsFont);
-//        mWebsiteLabel.setTypeface(caviarDreamsFont);
-//        mPhoneLabel.setTypeface(caviarDreamsFont);
-//        mAddressLabel.setTypeface(caviarDreamsFont);
-//        mSaveHotelButton.setTypeface(caviarDreamsFont);
     }
 
     @Override
@@ -80,6 +79,17 @@ public class HotelDetailFragment extends Fragment implements View.OnClickListene
                 .resize(MAX_WIDTH, MAX_HEIGHT)
                 .centerCrop()
                 .into(mImageLabel);
+
+        context = getActivity().getApplicationContext();
+
+
+        Typeface caviarDreamsFont = Typeface.createFromAsset(context.getAssets(), "fonts/CaviarDreams.ttf");
+        mNameLabel.setTypeface(caviarDreamsFont);
+        mRatingLabel.setTypeface(caviarDreamsFont);
+        mWebsiteLabel.setTypeface(caviarDreamsFont);
+        mPhoneLabel.setTypeface(caviarDreamsFont);
+        mAddressLabel.setTypeface(caviarDreamsFont);
+        mSaveHotelButton.setTypeface(caviarDreamsFont);
 
 
 

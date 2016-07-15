@@ -35,4 +35,16 @@
         android:layout_below="@+id/locationEditText"
         android:layout_centerHorizontal="true" />
 
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="SAVED HOTELS"
+        android:id="@+id/savedHotelsButton"
+        android:background="#d8080808"
+        android:textColor="#e7ffffff"
+        android:textSize="33sp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
 </RelativeLayout>

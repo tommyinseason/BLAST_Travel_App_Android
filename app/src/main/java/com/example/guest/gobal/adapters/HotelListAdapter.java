@@ -69,9 +69,12 @@ public class HotelListAdapter extends RecyclerView.Adapter<HotelListAdapter.Hote
         }
 
         public void bindHotel(Hotel hotel) {
+            Typeface caviarDreamsFont = Typeface.createFromAsset(mContext.getAssets(), "fonts/CaviarDreams.ttf");
             Picasso.with(mContext).load(hotel.getImageUrl()).into(mHotelImageView);
             mNameTextView.setText(hotel.getName());
             mRatingTextView.setText("Rating: " + hotel.getRating() + "/5");
+            mNameTextView.setTypeface(caviarDreamsFont);
+            mRatingTextView.setTypeface(caviarDreamsFont);
 
 
         }

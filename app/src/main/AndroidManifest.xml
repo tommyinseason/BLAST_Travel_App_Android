@@ -33,7 +33,8 @@
         <activity
             android:name=".ui.HotelDetailActivity"
             android:label="@string/title_activity_hotel_detail"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".ui.SavedHotelListActivity"></activity>
     </application>
 
 </manifest>

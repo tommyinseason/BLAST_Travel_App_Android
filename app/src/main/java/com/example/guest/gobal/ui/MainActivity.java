@@ -14,7 +14,6 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 
 public class MainActivity extends AppCompatActivity {
-
     @Bind(R.id.button1) Button mButton1;
     @Bind(R.id.button2) Button mButton2;
     @Bind(R.id.button3) Button mButton3;
@@ -29,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
             mButton1.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent intent = new Intent(MainActivity.this, HotelsActivity.class);
+                    Intent intent = new Intent(MainActivity.this, HotelsListActivity.class);
                     startActivity(intent);
                     Toast.makeText(MainActivity.this,  "BOOK NOW!", Toast.LENGTH_LONG).show();
                 }

@@ -20,38 +20,12 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 
 public class HotelsActivity extends AppCompatActivity implements View.OnClickListener {
-    private DatabaseReference mSearchedLocationReference;
-
-    private ValueEventListener mSearchedLocationReferenceListener;
-
     @Bind(R.id.buttonSearch) Button mButtonSearch;
     @Bind(R.id.locationEditText) EditText mLocationEditText;
 //    @Bind(R.id.savedHotelsButton) EditText mSavedHotelsButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
-        mSearchedLocationReference = FirebaseDatabase
-                .getInstance()
-                .getReference()
-                .child(Constants.FIREBASE_LOCATION_SEARCHED_LOCATION);
-
-        mSearchedLocationReferenceListener = mSearchedLocationReference.addValueEventListener(new ValueEventListener() {
-
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                for (DataSnapshot locationSnapshot : dataSnapshot.getChildren()) {
-                    String location = locationSnapshot.getValue().toString();
-                    Log.d("Locations updated", "location: " + location);
-                }
-            }
-
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-
-            }
-        });
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hotels);
         ButterKnife.bind(this);
@@ -68,12 +42,7 @@ public class HotelsActivity extends AppCompatActivity implements View.OnClickLis
     @Override
     public void onClick(View v) {
         if(v == mButtonSearch) {
-            String location = mLocationEditText.getText().toString();
-
-            saveLocationToFirebase(location);
-
             Intent intent = new Intent(HotelsActivity.this, HotelsListActivity.class);
-            intent.putExtra("location", location);
             startActivity(intent);
         }
 
@@ -81,14 +50,5 @@ public class HotelsActivity extends AppCompatActivity implements View.OnClickLis
 //            Intent intent = new Intent(HotelsActivity.this, SavedHotelListActivity.class);
 //            startActivity(intent);
 //        }
-    }
-
-    public void saveLocationToFirebase(String location) {
-        mSearchedLocationReference.push().setValue(location);
-    }
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        mSearchedLocationReference.removeEventListener(mSearchedLocationReferenceListener);
     }
 }

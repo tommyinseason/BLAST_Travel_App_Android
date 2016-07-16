@@ -26,7 +26,7 @@ public class SavedHotelListActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.activity_hotels);
+        setContentView(R.layout.activity_hotels_show);
         ButterKnife.bind(this);
 
         mHotelReference = FirebaseDatabase.getInstance().getReference(Constants.FIREBASE_CHILD_HOTELS);

@@ -9,9 +9,11 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
+import android.support.v4.view.PagerTabStrip;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -42,7 +44,9 @@ public class HotelDetailFragment extends Fragment implements View.OnClickListene
     @Bind(R.id.websiteTextView) TextView mWebsiteLabel;
     @Bind(R.id.phoneTextView) TextView mPhoneLabel;
     @Bind(R.id.addressTextView) TextView mAddressLabel;
-    @Bind(R.id.saveHotelButton) TextView mSaveHotelButton;
+    @Bind(R.id.saveHotelButton) Button mSaveHotelButton;
+    @Bind(R.id.savedHotelsButton) Button mSavedHotelsButton;
+
 
     private Hotel mHotel;
 
@@ -90,6 +94,8 @@ public class HotelDetailFragment extends Fragment implements View.OnClickListene
         mPhoneLabel.setTypeface(caviarDreamsFont);
         mAddressLabel.setTypeface(caviarDreamsFont);
         mSaveHotelButton.setTypeface(caviarDreamsFont);
+        mSavedHotelsButton.setTypeface(caviarDreamsFont);
+        mSavedHotelsButton.setTypeface(caviarDreamsFont);
 
 
 
@@ -103,6 +109,7 @@ public class HotelDetailFragment extends Fragment implements View.OnClickListene
         mAddressLabel.setOnClickListener(this);
 
         mSaveHotelButton.setOnClickListener(this);
+        mSavedHotelsButton.setOnClickListener(this);
 
         return view;
     }
@@ -132,6 +139,10 @@ public class HotelDetailFragment extends Fragment implements View.OnClickListene
                     .getReference(Constants.FIREBASE_CHILD_HOTELS);
             hotelRef.push().setValue(mHotel);
             Toast.makeText(getContext(), "Saved", Toast.LENGTH_SHORT).show();
+        }
+        if (v == mSavedHotelsButton) {
+            Intent intent = new Intent(getContext(), SavedHotelListActivity.class);
+            startActivity(intent);
         }
     }
 }

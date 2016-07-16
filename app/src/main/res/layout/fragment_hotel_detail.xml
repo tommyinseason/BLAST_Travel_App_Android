@@ -56,7 +56,7 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="184dp">
 
             <LinearLayout
                 android:orientation="vertical"
@@ -69,7 +69,13 @@
                 android:weightSum="1"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true">
+                android:layout_alignParentStart="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"><![CDATA[>
+
+
+
+                ]]></LinearLayout>
 
                 <TextView
                     android:layout_width="132dp"
@@ -117,17 +123,44 @@
                     android:gravity="center"
                     android:layout_weight="0.10" />
 
-            </LinearLayout>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
             <Button
-                android:layout_width="match_parent"
+                android:layout_width="190dp"
                 android:layout_height="wrap_content"
-                android:text="Save Hotel To Itinerary"
-                android:id="@+id/saveHotelButton"
+                android:text="SAVED TRIPS"
+                android:id="@+id/savedHotelsButton"
+                android:background="#d8080808"
+                android:textColor="#e7ffffff"
+                android:textSize="23sp"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
                 android:layout_alignParentBottom="true"
-                android:background="@color/colorAccent"
-                android:textColor="@color/colorTextIcons"
-                android:textSize="15sp" />
+                android:layout_alignParentTop="true" />
+
+            <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="SAVE TRIP"
+                    android:id="@+id/saveHotelButton"
+                    android:background="#d8080808"
+                    android:textColor="@color/colorTextIcons"
+                    android:textSize="23sp"
+                    android:layout_weight="0.13"
+
+                android:layout_gravity="center_horizontal"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_toStartOf="@+id/savedHotelsButton"
+                android:layout_toLeftOf="@+id/savedHotelsButton"
+                android:layout_alignParentTop="true" />
         </RelativeLayout>
+
     </LinearLayout>
 </FrameLayout>

@@ -3,8 +3,8 @@
 
     <stroke
         android:width="2dp"
-        android:color="#ffffff"
-        android:background="#ffffff"
+        android:color="#000000"
+        android:background="#000000"
         />
 
 

@@ -56,34 +56,23 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="184dp">
+            android:layout_height="match_parent">
 
-            <LinearLayout
+            <GridLayout
                 android:orientation="vertical"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:paddingLeft="30dp"
                 android:paddingTop="20dp"
                 android:paddingRight="30dp"
-                android:background="@drawable/sunrise"
+                android:background="@drawable/lilly"
                 android:weightSum="1"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentRight="true"
-                android:layout_alignParentEnd="true"><![CDATA[>
-
-
-
-                ]]></LinearLayout>
-
-                <TextView
-                    android:layout_width="132dp"
-                    android:layout_height="wrap_content"
-                    android:icon="@drawable/ic_local_phone_black_24dp"
-                    android:id="@+id/textView"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_weight="0.13" />
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -95,8 +84,10 @@
                     android:textSize="18sp"
                     android:textStyle="bold"
                     android:layout_marginBottom="10dp"
-                    android:gravity="center" />
-
+                    android:gravity="center"
+                    android:layout_weight="0.10"
+                    android:layout_row="0"
+                    android:layout_column="0" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -108,10 +99,13 @@
                     android:textSize="18sp"
                     android:textStyle="bold"
                     android:layout_marginBottom="10dp"
-                    android:gravity="center_vertical" />
+                    android:gravity="center_vertical"
+                    android:layout_weight="0.10"
+                    android:layout_row="3"
+                    android:layout_column="0" />
 
                 <TextView
-                    android:layout_width="116dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="View on Yelp"
                     android:id="@+id/websiteTextView"
@@ -121,45 +115,37 @@
                     android:textStyle="bold"
                     android:layout_marginBottom="10dp"
                     android:gravity="center"
-                    android:layout_weight="0.10" />
+                    android:layout_weight="0.10"
+                    android:layout_row="5"
+                    android:layout_column="0" />
 
+                <Button
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="SAVE TRIP"
+                        android:id="@+id/saveHotelButton"
+                        android:background="#c7ffffff"
+                        android:textColor="#000000"
+                        android:textSize="23sp"
+                        android:layout_weight="0.10"
+                        android:paddingBottom="6dp"
+                    android:layout_row="6"
+                    android:layout_column="0" />
 
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <Button
-                android:layout_width="190dp"
-                android:layout_height="wrap_content"
-                android:text="SAVED TRIPS"
-                android:id="@+id/savedHotelsButton"
-                android:background="#d8080808"
-                android:textColor="#e7ffffff"
-                android:textSize="23sp"
-                android:layout_alignParentRight="true"
-                android:layout_alignParentEnd="true"
-                android:layout_alignParentBottom="true"
-                android:layout_alignParentTop="true" />
-
-            <Button
-                    android:layout_width="wrap_content"
+                <Button
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="SAVE TRIP"
-                    android:id="@+id/saveHotelButton"
-                    android:background="#d8080808"
-                    android:textColor="@color/colorTextIcons"
+                    android:text="SAVED TRIPS"
+                    android:id="@+id/savedHotelsButton"
+                    android:background="#c7ebebeb"
+                    android:textColor="#000000"
                     android:textSize="23sp"
-                    android:layout_weight="0.13"
+                    android:layout_row="7"
+                    android:layout_column="0" />
 
-                android:layout_gravity="center_horizontal"
-                android:layout_alignParentBottom="true"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
-                android:layout_toStartOf="@+id/savedHotelsButton"
-                android:layout_toLeftOf="@+id/savedHotelsButton"
-                android:layout_alignParentTop="true" />
+            </GridLayout>
+
+
         </RelativeLayout>
 
     </LinearLayout>

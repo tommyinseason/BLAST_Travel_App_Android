@@ -26,7 +26,7 @@ public class HotelDetailActivity extends AppCompatActivity {
     @Bind(R.id.viewPager) ViewPager mViewPager;
     private HotelPagerAdapter adapterViewPager;
     ArrayList<Hotel> mHotels = new ArrayList<>();
-    @Bind(R.id.pagerHeader) PagerTabStrip mTabStrip;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,8 +34,7 @@ public class HotelDetailActivity extends AppCompatActivity {
         setContentView(R.layout.activity_hotel_detail);
         ButterKnife.bind(this);
 
-        Typeface caviarDreamsFont = Typeface.createFromAsset(getAssets(), "fonts/CaviarDreams.ttf");
-        mTabStrip.setTypeface(caviarDreamsFont);
+
 
         mHotels = Parcels.unwrap(getIntent().getParcelableExtra("hotels"));
         Log.d("mHotels", mHotels.size() + "?");

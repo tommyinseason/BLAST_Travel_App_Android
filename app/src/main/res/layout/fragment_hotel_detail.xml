@@ -62,13 +62,22 @@
                 android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
-                android:layout_above="@+id/saveHotelButton"
                 android:paddingLeft="30dp"
                 android:paddingTop="20dp"
-                android:paddingRight="30dp">
+                android:paddingRight="30dp"
+                android:background="@drawable/sunrise"
+                android:weightSum="1"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true">
+
+                <TextView
+                    android:layout_width="132dp"
+                    android:layout_height="wrap_content"
+                    android:icon="@drawable/ic_local_phone_black_24dp"
+                    android:id="@+id/textView"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_weight="0.13" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -77,10 +86,11 @@
                     android:id="@+id/phoneTextView"
                     android:drawablePadding="4dp"
                     android:textColor="@color/colorTextIcons"
-                    android:textSize="15sp"
+                    android:textSize="18sp"
                     android:textStyle="bold"
                     android:layout_marginBottom="10dp"
-                    android:gravity="center"/>
+                    android:gravity="center" />
+
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -89,22 +99,23 @@
                     android:drawablePadding="4dp"
                     android:id="@+id/addressTextView"
                     android:textColor="@color/colorTextIcons"
-                    android:textSize="15sp"
+                    android:textSize="18sp"
                     android:textStyle="bold"
                     android:layout_marginBottom="10dp"
-                    android:gravity="center_vertical"/>
+                    android:gravity="center_vertical" />
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="116dp"
                     android:layout_height="wrap_content"
                     android:text="View on Yelp"
                     android:id="@+id/websiteTextView"
                     android:drawablePadding="4dp"
                     android:textColor="@color/colorTextIcons"
-                    android:textSize="15sp"
+                    android:textSize="18sp"
                     android:textStyle="bold"
                     android:layout_marginBottom="10dp"
-                    android:gravity="center" />
+                    android:gravity="center"
+                    android:layout_weight="0.10" />
 
             </LinearLayout>
 

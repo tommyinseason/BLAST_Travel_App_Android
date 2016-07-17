@@ -20,6 +20,8 @@ import android.widget.Toast;
 
 import com.example.guest.gobal.R;
 import com.example.guest.gobal.models.Hotel;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.squareup.picasso.Picasso;
@@ -144,5 +146,22 @@ public class HotelDetailFragment extends Fragment implements View.OnClickListene
             Intent intent = new Intent(getContext(), SavedHotelListActivity.class);
             startActivity(intent);
         }
+        if (v == mSaveHotelButton) {
+            FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+            String uid = user.getUid();
+
+            DatabaseReference restaurantRef = FirebaseDatabase
+                    .getInstance()
+                    .getReference(Constants.FIREBASE_CHILD_HOTELS)
+                    .child(uid);
+
+            DatabaseReference pushRef = restaurantRef.push();
+            String pushId = pushRef.getKey();
+            mHotel.setPushId(pushId);
+            pushRef.setValue(mHotel);
+
+            Toast.makeText(getContext(), "Saved", Toast.LENGTH_SHORT).show();
+        }
+
     }
 }

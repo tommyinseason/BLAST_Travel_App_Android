@@ -18,6 +18,7 @@ public class Hotel {
     double latitude;
     double longitude;
     ArrayList<String> categories = new ArrayList<>();
+    private String pushId;
 
     public Hotel() {}
 
@@ -71,6 +72,10 @@ public class Hotel {
 
     public ArrayList<String> getCategories() {
         return categories;
+    }
+
+    public void setPushId(String pushId) {
+        this.pushId = pushId;
     }
 
 }

@@ -44,7 +44,7 @@ public class SavedHotelListActivity extends AppCompatActivity {
 
     private void setUpFirebaseAdapter() {
         mFirebaseAdapter = new FirebaseRecyclerAdapter<Hotel, FirebaseHotelViewHolder>
-                (Hotel.class, R.layout.hotel_list_item, FirebaseHotelViewHolder.class, mHotelReference) {
+                (Hotel.class, R.layout.hotel_list_item_drag, FirebaseHotelViewHolder.class, mHotelReference) {
 
             @Override
             protected void populateViewHolder(FirebaseHotelViewHolder viewHolder, Hotel model, int position) {

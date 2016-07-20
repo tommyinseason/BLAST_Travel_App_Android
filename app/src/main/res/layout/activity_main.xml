@@ -18,21 +18,27 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_weight=".33">
+        android:layout_weight=".33"
+        android:background="@drawable/fiji"
+        android:id="@+id/layout1">
 
         <Button
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:text="HOTELS"
             android:id="@+id/button1"
-            android:background="@drawable/fiji"
             android:textColor="@color/colorTextIcons"
-            android:textSize="67sp" />
+            android:textSize="67sp"
+            android:background="#2fae70e5"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
     </RelativeLayout>
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@drawable/flights"
         android:layout_weight=".33">
 
         <Button
@@ -40,14 +46,16 @@
             android:layout_height="match_parent"
             android:text="FLIGHTS"
             android:id="@+id/button2"
-            android:background="@drawable/flights"
             android:textColor="@color/colorTextIcons"
-            android:textSize="67sp" />
+            android:textSize="67sp"
+            android:background="#2fae70e5" />
+
     </RelativeLayout>
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@drawable/autos"
         android:layout_weight=".33">
 
         <Button
@@ -55,8 +63,8 @@
             android:layout_height="match_parent"
             android:text="AUTOS"
             android:id="@+id/button3"
-            android:background="@drawable/autos"
             android:textColor="@color/colorTextIcons"
-            android:textSize="67sp"/>
+            android:textSize="67sp"
+            android:background="#2fae70e5" />
     </RelativeLayout>
 </LinearLayout>

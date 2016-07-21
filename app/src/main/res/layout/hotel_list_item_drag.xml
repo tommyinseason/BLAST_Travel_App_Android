@@ -16,6 +16,19 @@
         android:scaleType="centerCrop"
         android:background="@drawable/border_style" />
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Rating"
+            android:id="@+id/ratingTextView"
+            android:textColor="@color/colorAccent"
+            android:layout_gravity="right"
+            android:layout_weight="0.85"
+            android:layout_alignBottom="@+id/hotelImageView"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginBottom="36dp" />
+
         <ImageView
             android:id="@+id/dragIcon"
             android:layout_width="30dp"
@@ -45,16 +58,6 @@
             android:text="Hotel Name"
             android:textColor="#000000" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Rating"
-            android:id="@+id/ratingTextView"
-            android:layout_alignParentRight="true"
-            android:textColor="@color/colorAccent"
-            android:layout_alignParentBottom="true"
-            android:layout_gravity="right"
-            android:layout_weight="0.85" />
 
 
     </LinearLayout>

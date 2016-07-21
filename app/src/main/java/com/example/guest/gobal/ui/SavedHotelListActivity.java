@@ -5,13 +5,16 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.helper.ItemTouchHelper;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 
 import com.example.guest.gobal.R;
+import com.example.guest.gobal.adapters.FirebaseHotelListAdapter;
 import com.example.guest.gobal.adapters.FirebaseHotelViewHolder;
 import com.example.guest.gobal.models.Hotel;
+import com.example.guest.gobal.util.SimpleItemTouchHelperCallback;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -24,6 +27,7 @@ import butterknife.ButterKnife;
 public class SavedHotelListActivity extends AppCompatActivity {
     private DatabaseReference mHotelReference;
     private FirebaseRecyclerAdapter mFirebaseAdapter;
+    private ItemTouchHelper mItemTouchHelper;
 
     @Bind(R.id.recyclerView) RecyclerView mRecyclerView;
 
@@ -32,28 +36,32 @@ public class SavedHotelListActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.activity_hotels_show);
+        setContentView(R.layout.hotel_list_item);
         ButterKnife.bind(this);
 
-        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-        String uid = user.getUid();
-
-        mHotelReference = FirebaseDatabase.getInstance().getReference(Constants.FIREBASE_CHILD_HOTELS);
         setUpFirebaseAdapter();
     }
 
     private void setUpFirebaseAdapter() {
-        mFirebaseAdapter = new FirebaseRecyclerAdapter<Hotel, FirebaseHotelViewHolder>
-                (Hotel.class, R.layout.hotel_list_item_drag, FirebaseHotelViewHolder.class, mHotelReference) {
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        String uid = user.getUid();
 
-            @Override
-            protected void populateViewHolder(FirebaseHotelViewHolder viewHolder, Hotel model, int position) {
-                viewHolder.bindHotel(model);
-            }
-        };
+        mHotelReference = FirebaseDatabase
+                .getInstance()
+                .getReference(Constants.FIREBASE_CHILD_HOTELS)
+                .child(uid);
+
+        mFirebaseAdapter = new FirebaseHotelListAdapter(Hotel.class,
+                R.layout.hotel_list_item_drag, FirebaseHotelViewHolder.class,
+                mHotelReference, this,this);
+
         mRecyclerView.setHasFixedSize(true);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         mRecyclerView.setAdapter(mFirebaseAdapter);
+
+        ItemTouchHelper.Callback callback = new SimpleItemTouchHelperCallback(mFirebaseAdapter);
+        mItemTouchHelper = new ItemTouchHelper(callback);
+        mItemTouchHelper.attachToRecyclerView(mRecyclerView);
     }
 
     @Override
@@ -61,6 +69,12 @@ public class SavedHotelListActivity extends AppCompatActivity {
         super.onDestroy();
         mFirebaseAdapter.cleanup();
     }
+
+    @Override
+    public void onStartDrag(RecyclerView.ViewHolder viewHolder) {
+        mItemTouchHelper.startDrag(viewHolder);
+    }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();

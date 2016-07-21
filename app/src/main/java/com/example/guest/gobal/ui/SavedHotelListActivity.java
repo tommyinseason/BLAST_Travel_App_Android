@@ -14,19 +14,21 @@ import com.example.guest.gobal.R;
 import com.example.guest.gobal.adapters.FirebaseHotelListAdapter;
 import com.example.guest.gobal.adapters.FirebaseHotelViewHolder;
 import com.example.guest.gobal.models.Hotel;
+import com.example.guest.gobal.util.OnStartDragListener;
 import com.example.guest.gobal.util.SimpleItemTouchHelperCallback;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
-public class SavedHotelListActivity extends AppCompatActivity {
+public class SavedHotelListActivity extends AppCompatActivity implements OnStartDragListener {
     private DatabaseReference mHotelReference;
-    private FirebaseRecyclerAdapter mFirebaseAdapter;
+    private FirebaseHotelListAdapter mFirebaseAdapter;
     private ItemTouchHelper mItemTouchHelper;
 
     @Bind(R.id.recyclerView) RecyclerView mRecyclerView;
@@ -46,14 +48,15 @@ public class SavedHotelListActivity extends AppCompatActivity {
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         String uid = user.getUid();
 
-        mHotelReference = FirebaseDatabase
+        Query query = FirebaseDatabase
                 .getInstance()
                 .getReference(Constants.FIREBASE_CHILD_HOTELS)
-                .child(uid);
+                .child(uid)
+                .orderByChild(Constants.FIREBASE_QUERY_INDEX);
 
         mFirebaseAdapter = new FirebaseHotelListAdapter(Hotel.class,
                 R.layout.hotel_list_item_drag, FirebaseHotelViewHolder.class,
-                mHotelReference, this,this);
+                query, this,this);
 
         mRecyclerView.setHasFixedSize(true);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));

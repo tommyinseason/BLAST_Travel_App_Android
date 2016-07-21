@@ -34,11 +34,11 @@ public class HotelDetailActivity extends AppCompatActivity {
         setContentView(R.layout.activity_hotel_detail);
         ButterKnife.bind(this);
 
-
-
         mHotels = Parcels.unwrap(getIntent().getParcelableExtra("hotels"));
         Log.d("mHotels", mHotels.size() + "?");
-        int startingPosition = Integer.parseInt(getIntent().getStringExtra("position"));
+
+        int startingPosition = getIntent().getIntExtra("position", 0);
+
 
         adapterViewPager = new HotelPagerAdapter(getSupportFragmentManager(), mHotels);
         mViewPager.setAdapter(adapterViewPager);

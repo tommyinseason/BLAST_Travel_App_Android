@@ -28,22 +28,20 @@ import java.util.ArrayList;
 public class FirebaseHotelViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
     private static final int MAX_WIDTH = 200;
     private static final int MAX_HEIGHT = 200;
-    public ImageView mHotelImageView;
 
 
     View mView;
     Context mContext;
+    public ImageView mHotelImageView;
 
     public FirebaseHotelViewHolder(View itemView) {
         super(itemView);
         mView = itemView;
         mContext = itemView.getContext();
-        itemView.setOnClickListener(this);
     }
 
     public void bindHotel(Hotel hotel) {
         mHotelImageView = (ImageView) mView.findViewById(R.id.hotelImageView);
-        ImageView hotelImageView = (ImageView) mView.findViewById(R.id.hotelImageView);
         TextView nameTextView = (TextView) mView.findViewById(R.id.hotelNameTextView);
         TextView ratingTextView = (TextView) mView.findViewById(R.id.ratingTextView);
 

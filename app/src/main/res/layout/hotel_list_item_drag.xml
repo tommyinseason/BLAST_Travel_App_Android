@@ -26,8 +26,7 @@
             android:layout_weight="0.85"
             android:layout_alignBottom="@+id/hotelImageView"
             android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true"
-            android:layout_marginBottom="36dp" />
+            android:layout_alignParentEnd="true" />
 
         <ImageView
             android:id="@+id/dragIcon"
@@ -35,7 +34,7 @@
             android:layout_height="30dp"
             android:layout_alignLeft="@id/hotelImageView"
             android:gravity="bottom|left"
-            android:src="@drawable/ic_reorder_black_24dp"/>
+            android:src="@drawable/ic_reorder_white_24dp"/>
 
     </RelativeLayout>
 

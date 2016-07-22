@@ -86,10 +86,28 @@ public class SavedHotelListActivity extends AppCompatActivity implements OnStart
     }
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        int id = item.getItemId();
-        if (id == R.id.action_logout) {
-            logout();
-            return true;
+
+
+        switch (item.getItemId()) {
+
+            case R.id.action_logout:
+                logout();
+                return true;
+
+            case R.id.action_home:
+                startActivity(new Intent(this, MainActivity.class));
+                return true;
+
+            case R.id.action_flights:
+                startActivity(new Intent(this, FlightsActivity.class));
+                return true;
+
+            case R.id.action_autos:
+                startActivity(new Intent(this, AutosActivity.class));
+                return true;
+
+            case R.id.action_saved:
+                startActivity(new Intent(this, SavedHotelListActivity.class));
         }
         return super.onOptionsItemSelected(item);
     }

@@ -37,7 +37,7 @@ public class HotelListAdapter extends RecyclerView.Adapter<HotelListAdapter.Hote
 
     @Override
     public HotelListAdapter.HotelViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.hotel_list_item, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.hotel_list_item_drag, parent, false);
         HotelViewHolder viewHolder = new HotelViewHolder(view);
         return viewHolder;
     }
@@ -57,7 +57,6 @@ public class HotelListAdapter extends RecyclerView.Adapter<HotelListAdapter.Hote
         @Bind(R.id.hotelImageView) ImageView mHotelImageView;
         @Bind(R.id.hotelNameTextView) TextView mNameTextView;
         @Bind(R.id.ratingTextView) TextView mRatingTextView;
-//        @Bind(R.id.addressTextView) TextView mAddressTextView;
         private Context mContext;
 
 

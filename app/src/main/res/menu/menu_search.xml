@@ -1,11 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
+
     <item
         android:id="@+id/action_search"
         android:icon="@drawable/ic_search_black_24dp"
         app:showAsAction="always"
         app:actionViewClass="android.support.v7.widget.SearchView"
-        android:title="Search">
-    </item>
+        android:title="Search" />
+
+
+    <item
+        android:id="@+id/action_home"
+        android:icon="@drawable/ic_home_white_24dp"
+        android:visible="true"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/action_flights"
+        android:icon="@drawable/ic_flight_takeoff_white_24dp"
+        android:visible="true"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/action_autos"
+        android:icon="@drawable/ic_motorcycle_white_24dp"
+        android:visible="true"
+        app:showAsAction="always" />
+
+
+    <item
+        android:id="@+id/action_saved"
+        android:icon="@drawable/ic_favorite_white_24dp"
+        android:visible="true"
+        app:showAsAction="always" />
+
 </menu>

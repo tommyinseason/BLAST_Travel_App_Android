@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">GOBAL</string>
+    <string name="app_name">BLAST</string>
     <string name="title_activity_flights">FlightsActivity</string>
     <string name="large_text">
         "Material is the metaphor.\n\n"
@@ -93,6 +93,25 @@
     <string name="action_settings">Settings</string>
     <string name="title_activity_autos">AutosActivity</string>
     <string name="title_activity_hotel_detail">HotelDetailActivity</string>
+
+    <string-array name="titles">
+        <item>Home</item>
+        <item>Hotels</item>
+        <item>Flights</item>
+        <item>Autos</item>
+        <item>Search</item>
+        <item>My Saved Trip</item>
+    </string-array>
+
+    <array name="icons">
+        <item>@drawable/ic_home_black_24dp</item>
+        <item>@drawable/ic_local_phone_black_24dp</item>
+        <item>@drawable/ic_flight_takeoff_black_24dp</item>
+        <item>@drawable/ic_motorcycle_white_24dp</item>
+        <item>@drawable/ic_search_black_24dp</item>
+        <item>@drawable/ic_favorite_white_24dp</item>
+
+    </array>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

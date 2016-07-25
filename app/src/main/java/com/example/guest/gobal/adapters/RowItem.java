@@ -1,7 +1,7 @@
-package com.example.guest.gobal.ui;
+package com.example.guest.gobal.adapters;
 
 /**
- * Created by tomjones on 7/25/16.
+ * Created by Guest on 7/25/16.
  */
 public class RowItem {
 
@@ -9,10 +9,11 @@ public class RowItem {
     private int icon;
 
     public RowItem(String title, int icon) {
-        this.title = title;
+        this.title= title;
         this.icon = icon;
 
     }
+
     public String getTitle() { return title; }
 
     public void setTitle(String title) { this.title = title; }
@@ -22,3 +23,4 @@ public class RowItem {
     public void setIcon(int icon) { this.icon = icon; }
 
 }
+

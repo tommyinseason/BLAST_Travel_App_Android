@@ -29,6 +29,38 @@
                 app:layout_collapseMode="pin"
                 app:popupTheme="@style/AppTheme.PopupOverlay" />
 
+            <item
+                android:id="@+id/action_home"
+                android:icon="@drawable/ic_home_white_24dp"
+                android:visible="true"
+                app:showAsAction="always"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <item
+                android:id="@+id/action_flights"
+                android:icon="@drawable/ic_flight_takeoff_white_24dp"
+                android:visible="true"
+                app:showAsAction="always"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <item
+                android:id="@+id/action_autos"
+                android:icon="@drawable/ic_motorcycle_white_24dp"
+                android:visible="true"
+                app:showAsAction="always"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <item
+                android:id="@+id/action_saved"
+                android:icon="@drawable/ic_favorite_white_24dp"
+                android:visible="true"
+                app:showAsAction="always"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
         </android.support.design.widget.CollapsingToolbarLayout>
     </android.support.design.widget.AppBarLayout>
 
